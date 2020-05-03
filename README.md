@@ -1,1 +1,72 @@
-# movies
+### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
+# Project 2
+
+by [Lucy Maitland](https://github.com/lucymait) and [Marius Zerni](https://github.com/MariusZerni)
+
+## Overview
+
+Movify was my second project, with General Assembly, during the software engineering immersive course. Marius and I had to build a multi-page React web app, that consumes a public API within a mini 48 hour hackathon.
+
+Deliberation didn't take long, as we knew straight away which external API we wanted to use. As we both have a passion for movies, The Movie Database API was the perfect fit.
+
+We built an app, where users can:
+- View a list of any Movie
+- Search for any Movie and view details on that specific Movie
+- View a list of the Top Rated Movies
+
+Want to find a great Movie to watch? Please feel free to check out Movify [here](https://lucymait.github.io/project-2/).
+
+## Brief
+
+- **Consume a public API** – this could be anything but it must make sense for your project.
+- **Have several components** - At least one classical and one functional.
+- **The app should include a router** - with several "pages".
+- **Include wireframes** - that you designed before building the app.
+- Have **semantically clean HTML** 
+- **Be deployed online** and accessible to the public.
+
+
+## Technologies Used
+
+- JavaScript (ES6)
+- React.js
+- HTML, JSX
+- The Movie Database API
+- Axios
+- Webpack
+- Git and GitHub
+- CSS
+- Bulma
+
+## Approach
+
+The first steps, involved thorough planning, so we knew which features we wanted to add before any start to the code:
+
+- A home page
+- A navbar
+- A movies page where users can search for any Movie (from the database) using the Searchbar, as well as use pagination.
+- A single movie page
+- Top Rated Movies page where users can scroll through the page to see the most recent top rated movies. 
+
+The routing of our app is:
+
+- The home page at path "/"
+- The Movies page at path "discover/movie"
+- The Single Movie page at path "/movie/:id"
+- The Top Rates Movies page at path "movie/top_rated"
+
+### Homepage
+
+### Navbar
+
+### Movies Page
+
+### SearchForm
+
+### Pagination
+
+### Single Movie Page
+
+### Top Rated Movies Page
+
+## Screenshots
