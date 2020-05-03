@@ -24,7 +24,7 @@ const App = () => (
       <Route exact path="/movie/top_rated" component={TopRated}/>
       <Route exact path="/movie/:id" component={SingleMovie}/>
     </Switch>
-    {/* <Footer/> */}
+    <Footer/>
   </BrowserRouter>
 )
 

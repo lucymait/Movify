@@ -20,26 +20,26 @@ class MoviesIndex extends React.Component {
   }
 
   fetchAllMovies(page) {
-    // setTimeout(() => {
-    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=6ab51da28effd684f4d12eaf8d20b33c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`)
-      .then(response => {
-        const movieImage = response.data.results
-        movieImage.forEach(elem => {
-          elem.imageUrl = 'https://image.tmdb.org/t/p/w500/' + elem.poster_path
+    setTimeout(() => {
+      axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=6ab51da28effd684f4d12eaf8d20b33c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`)
+        .then(response => {
+          const movieImage = response.data.results
+          movieImage.forEach(elem => {
+            elem.imageUrl = 'https://image.tmdb.org/t/p/w500/' + elem.poster_path
 
-        }
-        )
-        this.setState({
-          movies: response.data,
-          filteredMovies: response.data,
-          query: '',
-          totalPages: parseInt(response.data.total_pages),
-          page: parseInt(response.data.page)
+          }
+          )
+          this.setState({
+            movies: response.data,
+            filteredMovies: response.data,
+            query: '',
+            totalPages: parseInt(response.data.total_pages),
+            page: parseInt(response.data.page)
+          })
         })
-      })
 
-      .catch(error => console.error(error))
-    // }, 3000)
+        .catch(error => console.error(error))
+    }, 3000)
   }
 
 
@@ -112,8 +112,6 @@ class MoviesIndex extends React.Component {
 
 
   render() {
-
-
     if (!this.state.movies)
       return <Spinner
       />
