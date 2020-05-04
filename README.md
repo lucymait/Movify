@@ -66,6 +66,21 @@ Our Homepage just consisted of an image and our Navbar.
 
 ![Insomnia](/Images/Insomnia.png)
 
+``` js
+class MoviesIndex extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      movies: null,
+      page: 1,
+      totalPages: null,
+      filteredMovies: [],
+      query: ''
+    }
+  }
+```
+
 ### SearchForm
 
 ### Pagination

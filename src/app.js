@@ -7,7 +7,6 @@ import './styles/style.scss'
 
 import Home from './components/Home'
 import NavBar from './components/NavBar'
-import Footer from './components/Footer'
 import Movies from './components/Movies'
 import TopRated from './components/TopRated'
 import SingleMovie from './components/SingleMovie'
@@ -24,7 +23,6 @@ const App = () => (
       <Route exact path="/movie/top_rated" component={TopRated}/>
       <Route exact path="/movie/:id" component={SingleMovie}/>
     </Switch>
-    <Footer/>
   </BrowserRouter>
 )
 

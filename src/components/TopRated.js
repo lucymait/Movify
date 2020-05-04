@@ -4,6 +4,7 @@ import axios from 'axios'
 import MovieCard from './MovieCard'
 import SearchForm from './SearchForm'
 import Spinner from './Spinner'
+import Footer from './Footer'
 
 class TopRated extends React.Component {
   constructor() {
@@ -36,7 +37,7 @@ class TopRated extends React.Component {
         }
         )
         .catch(error => console.error(error))
-    }, 3000)
+    }, 1000)
   }
 
   filterMovies(event) {
@@ -92,6 +93,7 @@ class TopRated extends React.Component {
             </div>
           </div>
         </section>
+        <Footer/>
       </>
       )
   }

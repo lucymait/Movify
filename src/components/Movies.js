@@ -5,6 +5,8 @@ import MovieCard from './MovieCard'
 import SearchForm from './SearchForm'
 import Pagination from './Pagination'
 import Spinner from './Spinner'
+import Footer from './Footer'
+
 
 class MoviesIndex extends React.Component {
   constructor() {
@@ -39,7 +41,7 @@ class MoviesIndex extends React.Component {
         })
 
         .catch(error => console.error(error))
-    }, 3000)
+    }, 1000)
   }
 
 
@@ -158,6 +160,7 @@ class MoviesIndex extends React.Component {
             page={this.state.page}
           />
         </div>
+        <Footer/>
       </>
       )
   }
