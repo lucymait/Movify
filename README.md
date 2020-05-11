@@ -58,7 +58,9 @@ The routing of our app is:
 
 ## Navbar
 
-We've created the navbar in order to navigate on the website. We've created 3 links :'Home', 'Movies' and 'Top Rated', each one is directing the user to the selected link. Also we've created the logic for the navbar to be fixed when the page is scrolled.
+We've created the navbar in order to navigate on the website. We've created 3 links :'Home', 'Movies' and 'Top Rated', each one is directing the user to the selected link. 
+
+Also we've created the logic for the navbar to be fixed when the page is scrolled. In the NavBar object' state we've set a property 'scrolled' with the initial value of 'false'. Then in componentDidMount we've added an EventListener on 'scroll' that is checking if the vertical scroll location is less than 100 then it updates the scrolled state to be 'true' and this will trigger the display of the navbar class 'scrolled'.
 
 ```js
 import React from 'react'
