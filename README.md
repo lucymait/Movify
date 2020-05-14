@@ -409,6 +409,10 @@ We added a GIF of a Movie reel to act like a spinner on both the Movies Page and
 - Add a carousel feature
 - Add trailers (video feature)
 
+## Biggest Challenge & Wins
+
+- Our biggest challenge was being able to display all the movies. As we are fetching around 5000 movies from the TMDb API, we had to implement pagination in order to be able to display all the movies.
+
 ## Lessons learned
 
 - The structure of the API can make a huge difference on the number of steps you need to take to get all the information you want! Planning is key and using insomnia first so you can see how the API is laid out.
