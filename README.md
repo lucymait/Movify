@@ -11,19 +11,19 @@ Movify was my second project, with General Assembly, during the software enginee
 Deliberation didn't take long, as we knew straight away which external API we wanted to use. As we both have a passion for movies, The Movie Database API was the perfect fit.
 
 We built an app, where users can:
-- View a list of any Movie
-- Search for any Movie and view details on that specific Movie
-- View a list of the Top Rated Movies
+- View a list of any Movie.
+- Search for any Movie and view details on that specific Movie.
+- View a list of the Top Rated Movies.
 
 Want to find a great Movie to watch? Please feel free to check out Movify [here](https://lucymait.github.io/project-2/).
 
 ## Brief
 
-- **Consume a public API** – this could be anything but it must make sense for your project.
-- **Have several components** - At least one classical and one functional.
-- **The app should include a router** - with several "pages".
-- **Include wireframes** - that you designed before building the app.
-- Have **semantically clean HTML** 
+- **Consume a public API** – this could be anything but it must make sense for the project.
+- **Have several components** – At least one classical and one functional.
+- **The app should include a router** – with several "pages".
+- **Include wireframes** – designed before building the app.
+- **Have semantically clean HTML** 
 - **Be deployed online** and accessible to the public.
 
 
@@ -41,12 +41,12 @@ Want to find a great Movie to watch? Please feel free to check out Movify [here]
 
 ## Approach
 
-The first steps, involved thorough planning, so we knew which features we wanted to add before any start to the code:
+The first steps involved thorough planning, so we knew which features we wanted to add before any start to the code:
 
-- A home page
-- A navbar
+- A home page.
+- A navbar.
 - A movies page where users can search for any Movie (from the database) using the Searchbar, as well as use pagination.
-- A single movie page
+- A single movie page.
 - Top Rated Movies page where users can scroll through the page to see the most recent top rated movies. 
 
 The routing of our app is:
@@ -58,9 +58,9 @@ The routing of our app is:
 
 ## Navbar
 
-We've created the navbar in order to navigate on the website. We've created 3 links :'Home', 'Movies' and 'Top Rated', each one is directing the user to the selected link. 
+Our Navbar consisted of 3 links, 'Home', 'Movies' and 'Top Rated'. Each one is directing the user to the selected link. 
 
-Also we've created the logic for the navbar to be fixed when the page is scrolled. In the NavBar object' state we've set a property 'scrolled' with the initial value of 'false'. Then in componentDidMount we've added an EventListener on 'scroll' that is checking if the vertical scroll location is less than 100 then it updates the scrolled state to be 'true' and this will trigger the display of the navbar class 'scrolled'.
+Moreover, we created the logic for the Navbar to be fixed when the page is scrolled. In the Navbar 'object' state, we set a property 'scrolled' with the initial value of 'false'. Then, in componentDidMount we added an EventListener on 'scroll', checking if the vertical scroll location is less than 100. If the location is less than 100, it updates the scrolled state to be 'true' and this will trigger the display of the Navbar class 'scrolled'.
 
 ```js
 import React from 'react'
@@ -107,14 +107,14 @@ export default withRouter(NavBar)
 
 ## Movies Page
 
-After reading the documentation for our external API (The Movie Database) and receiving our API Key, we next studied the data in Insomnia so we can see how the API is laid out.
+After reading the documentation of our external API (The Movie Database) and receiving our API Key, we next studied the data in Insomnia so we could see how the API was laid out.
 
-As you can see from Insomnia, the data we wanted to fetch was results which gave us an array of objects which was the Single Movie.
+As you can see from Insomnia, the data we wanted to fetch was results an array of objects. Each object gave us data for each Single Movie.
 
-A challenge we came across was that the API only gave us 1 page of Movies per request. Therefore in order to retrieve all the movies we needed a search bar and pagination.
+A challenge we came across was that the API only gave us 1 page of Movies per request. Therefore, in order to retrieve all the movies, we needed a search bar and pagination.
 
 In our state we added:
-- Movies (as null), 
+- Movies (as null)
 - Page (as a number, 1)
 - totalPages (as null)
 - filteredMovies (as an empty array)
@@ -134,9 +134,9 @@ In our state we added:
 
 Next, we created a function **fetchAllMovies(page), to get our data through using axios (which we had to install as a dependency). We got the endpoint from the documentation, which illustrated that we had to add our API Key in the url (as seen below), to enable authorization. 
 
-We made a get requst to call to the API and fetch the Movies page and the Movie poster image. 
+A `get requst` was used, to call to the API and fetch the Movies page and the Movie poster image. 
 
-This function also set everything that is in state once we have the response.data.
+This function also set everything that is in state once we had the response.data.
 
 ``` js
   fetchAllMovies(page) {
@@ -190,7 +190,7 @@ The **filterMovies(event)** function, contained an if statement which checked wh
 
 Finally our render method, firstly returned our SearchForm which checked query and onChange. 
 
-Next we mapped through the results array and returned our Movie Card component. This displayed a card with the Movie Image, Rating and Release Date. 
+Next, we mapped through the results array and returned our Movie Card component. This displayed a card with the Movie Image, Rating and Release Date. 
 
 if anything was typed in the searchForm, the filterMovies function was called. We mapped through the filteredMovies and returned the MovieCard of the filtered Movie. 
 
@@ -229,8 +229,9 @@ An animation was added to the card, when on hover, the card flipped, to display 
 
 ![Pagination](/Images/Pages.png)
 
-As we're fetching around 5000 movies from the TMDb API, we had to implement pagination in order to be able to display all the movies. The API is offering an endpoint to retrieve 20 movies per page and it allows to specify a page number. In order for our pagination to work we created some logic so that whenever the user is pressing next or previous buttons, the API call will fetch the right page.
-This snippet is fetching a single page. In the URL we are setting a page variable which is the page selected by the user in the UI.
+As we were fetching around 5000 movies from the TMDb API, we had to implement pagination in order to be able to display all the movies. The API offerered an endpoint to retrieve 20 movies per page and it allows to specify a page number. In order for our pagination to work, we created some logic so that whenever the user is presses next or the previous button, the API call will fetch the right page.
+
+This code snippet fetches a single page. In the URL, we set a page variable, which is the page selected by the user in the UI.
 ```js
   fetchAllMovies(page) {
     axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=6ab51da28effd684f4d12eaf8d20b33c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`)
@@ -251,7 +252,7 @@ This snippet is fetching a single page. In the URL we are setting a page variabl
       .catch(error => console.error(error))
   }
 ```
-We're using Bulma library to display it
+We used the Bulma library to display the pagination.
 ```js
 import React from  'react'
 const Pagination = ({ totalPages, handleClick, handlePreviousClick, handleNextClick, page }) => {
@@ -273,14 +274,17 @@ const Pagination = ({ totalPages, handleClick, handlePreviousClick, handleNextCl
 }
 export default Pagination
 ```
-On the UI the user is able to input a specific page number as well and we're fetching the corresponding page from the API:
+On the UI, the user is able to input a specific page number as well, and the corresponding page is fetched from the API:
 ```js
   handleClick(event) {
     this.fetchAllMovies(event.target.innerHTML)
   }
 ```
-Here is a function that manages the next button click. Every time the user is clicking on the next page we're incrementing the page number.
-This function is getting the value fron the state and it is storing it in the new variable ```js const currentPage``` and also we're checking if ```js currentPage``` is equal to ```js totalPages``` to stop when the user clicked on the last page.
+Here is a function that manages the next button click. Every time the user clicks on the next button, the page number increases.
+
+This function gets the value fron the state and stores it in the new variable ```js const currentPage```.
+
+Also, we checked if ```js currentPage``` is equal to ```js totalPages``` and to stop the pages, when the user clicks on the last page.
 ```js
   handleNextClick() {
     const currentPage = this.state.page
@@ -290,7 +294,9 @@ This function is getting the value fron the state and it is storing it in the ne
     this.fetchAllMovies(currentPage + 1)
   }
 ```
-This code is simillar to the one from above the only differenceis that now we need to decrement the page number in order to display the previous page. Here we're checking if  ```js currentPage``` has reached the first page.
+This code is similar to the snippet above; the only difference is that now we need to decrease the page number in order to display the previous page. 
+
+Here we checked if  ```js currentPage``` has reached the first page.
 ```js
   handlePreviousClick() {
     const currentPage = this.state.page
@@ -303,9 +309,9 @@ This code is simillar to the one from above the only differenceis that now we ne
 
 ## Single Movie Page
 
-Clicking on an the Rating, of an individual Movie card, takes the user to that specific single Movie page. E.g: the endpoint /movie/496243 (this would be the single movie page for the movie with the id 496243, which is Parasite).
+Clicking on the Rating of an individual Movie card takes the user to that specific single Movie page, e.g. the endpoint /movie/496243 (this would be the single movie page for the movie with the id 496243, which is Parasite).
 
-The Single Movie page displays all the information for that selected movie e.g. **Description, Vote Count, Revenue, Runtime and Vote Average.** To do this we passed the selected drink's ID to the page through the URL and did an axios.get request to the end point with the ID (see details below). Our axios request was in a componentDidMount function which made the request straight away once the user clicked on the Movie Card. The request checks if the id is the same as the id of the props (which have been passed down).
+The Single Movie page displays all the information for that selected movie, e.g. **Description, Vote Count, Revenue, Runtime and Vote Average.** To do this, we passed the selected drink's ID to the page through the URL and did an axios.get request to the end point with the ID (see details below). Our axios request was in a componentDidMount function which made the request straight away once the user clicked on the Movie Card. The request checks if the id is the same as the id of the props (which have been passed down).
 
 ``` js
  componentDidMount() {
@@ -344,7 +350,7 @@ render() {
 
 ## Top Rated Movies Page
 
-We have also created a Top Rated page for users to easily access the top rated movies. TMDb is giving us an endpoint for the top rated movies and we are fetching data as well via Axios library.
+We have also created a Top Rated page for users to easily access the top rated movies. TMDb gave us an endpoint for the top rated movies and we are fetched the data via the Axios library.
 ```js
 import React from 'react'
 import axios from 'axios'
@@ -379,7 +385,7 @@ class TopRated extends React.Component {
     }, 3000)
   }
 ```
-As we only had a limited amount of time, for now we are only fetching the first page of the Top Rated movies. We are planning to add more improvements: adding logic to display all the Top Rated movies using pagination, design improvements . 
+As we only had a limited amount of time, for now we fetched only the first page of the Top Rated movies. We are planning to add more improvements: adding logic to display all the Top Rated movies using pagination and design improvements. 
 
 
 ## Spinner
@@ -397,7 +403,7 @@ We added a GIF of a Movie reel to act like a spinner on both the Movies Page and
 ### Movies Page
 ![Movies Page](/Images/Movies.png)
 
-### Single Movies Page
+### Single Movie Page
 ![Single Page](/Images/Single.png)
 
 ### Top Rated Movies
