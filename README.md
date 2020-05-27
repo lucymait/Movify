@@ -134,7 +134,7 @@ In our state we added:
 
 Next, we created a function **fetchAllMovies(page), to get our data through using axios (which we had to install as a dependency). We got the endpoint from the documentation, which illustrated that we had to add our API Key in the url (as seen below), to enable authorization. 
 
-A `get requst` was used, to call to the API and fetch the Movies page and the Movie poster image. 
+A `GET request` was used, to call to the API and fetch the Movies page and the Movie poster image. 
 
 This function also set everything that is in state once we had the response.data.
 
